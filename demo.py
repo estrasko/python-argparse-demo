@@ -48,12 +48,19 @@ if __name__ == '__main__':
         help = 'A boolean option.',
     )
 
-    # Adding another argument
+    # Adding another argument about wabbits
     parser.add_argument(
         '-q', '--quiet',
         default = False,
         action = 'store_true',
         help = 'Another boolean option.',
+    )
+
+    # Adding another argument about rabbits
+    parser.add_argument(
+        '-r', '--rabbits',
+        default = 3,
+        help = 'An integer about number of rabbits',
     )
 
     # Parse the command-line arguments into a 'dict'-like container
@@ -84,3 +91,4 @@ if __name__ == '__main__':
     print("Number:", args.number)
     print("Threshold:", args.threshold)
     print("I am cool?", args.i_am_cool)
+    print("Rabbits:", args.rabbits)
