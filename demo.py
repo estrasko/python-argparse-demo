@@ -48,13 +48,26 @@ if __name__ == '__main__':
         help = 'A boolean option.',
     )
 
+    # Adding another argument
+    parser.add_argument(
+        '-q', '--quiet',
+        default = False,
+        action = 'store_true',
+        help = 'Another boolean option.',
+    )
+
     # Parse the command-line arguments into a 'dict'-like container
     args = parser.parse_args()
 
+    if args.quiet:
+        print("Be vewwy vewwy quiet, I'm hunting wabbits.") 
+
+    else:
+
     # What does `args` object "look" like?
-    print(
-        "The args after being processed by the argparse parser object:\n",
-        args)
+        print(
+            "The args after being processed by the argparse parser object:\n",
+            args)
 
     # We access the arguments specified on the command line (or the default
     # values if they were not used) by using `args.` syntax.
